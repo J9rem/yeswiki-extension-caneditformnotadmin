@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<plugin name="caneditformnotadmin" version="1.0" active="1">
+  <author>Jeremy Dufraisse (J9rem)</author>
+  <label>Can Edit Form Not Admin</label>
+  <desc>Allow to edit form event if not admin</desc>
+</plugin>
