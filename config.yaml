@@ -1,0 +1,28 @@
+# This file is part of the YesWiki Extension caneditformnotadmin.
+# Authors : see README.md file that was distributed with this source code.
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+services:
+  _defaults:
+    autowire: true
+    public: true
+
+  YesWiki\Caneditformnotadmin\Service\:
+    resource: 'services/*'
+
+  # Allows to use controllers as services
+  YesWiki\Caneditformnotadmin\Controller\:
+    resource: 'controllers/*'
+
+  YesWiki\Caneditformnotadmin\Controller\FormController:
+    decorates: YesWiki\Bazar\Controller\FormController
+    decoration_on_invalid: null
+    arguments:
+      $parentFormController: '@.inner'
+
+  YesWiki\Caneditformnotadmin\Service\Guard:
+    decorates: YesWiki\Bazar\Service\Guard
+    decoration_on_invalid: null
+    arguments:
+      $parentGuard: '@.inner'
